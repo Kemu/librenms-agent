@@ -22,7 +22,7 @@ VERSION=2
 NTPQ_RAW=`$BIN_NTPQ -c rv | $BIN_TR ',' '\n' | $BIN_AWK '{$1=$1};1'`
 OFFSET=`echo $NTPQ_RAW | $BIN_GREP -oP '(?<=offset=).\S*'`
 STRATUM=`echo $NTPQ_RAW | $BIN_GREP -oP '(?<=stratum=).\S*'`
-FREQUENCY=`echo$NTPQ_RAW | $BIN_GREP -oP '(?<=frequency=).\S*'`
+FREQUENCY=`echo $NTPQ_RAW | $BIN_GREP -oP '(?<=frequency=).\S*'`
 SYS_JITTER=`echo $NTPQ_RAW | $BIN_GREP -oP '(?<=sys_jitter=).\S*'`
 CLK_JITTER=`echo $NTPQ_RAW | $BIN_GREP -oP '(?<=clk_jitter=).\S*'`
 CLK_WANDER=`echo $NTPQ_RAW | $BIN_GREP -oP '(?<=clk_wander=).\S*'`
